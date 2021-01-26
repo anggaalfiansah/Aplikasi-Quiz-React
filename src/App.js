@@ -56,12 +56,8 @@ class App extends Component {
             booleanJawab = "salah"
           }
           break;
-
-
-
-
-
-
+          default:
+            break;
       }
 
       tempHasilJawab.push({

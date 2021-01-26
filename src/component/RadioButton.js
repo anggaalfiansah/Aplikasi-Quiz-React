@@ -20,7 +20,7 @@ class RadioButton extends Component {
       
         this.props.funcJawab({
           soal_no : this.props.no,
-          jawaban :jawab
+          jawaban : jawab
         
         })
      
