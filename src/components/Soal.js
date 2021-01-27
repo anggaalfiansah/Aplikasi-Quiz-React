@@ -4,11 +4,12 @@ import Radio from "./jawaban/radio";
 import CheckBox from './jawaban/checkBox';
 import Essay from './jawaban/essay';
 import Hasil from './Hasil';
+import Score from './Score';
 
 class Soal extends Component {
     constructor(props) {
         super(props);
-        this.state = { jawabanSoal: [], koreksiJawaban: [], jawabanSoalKoreksi: []}
+        this.state = { jawabanSoal: [], koreksiJawaban: [] }
     }
 
     addJawaban = (jawaban) => {
@@ -60,20 +61,24 @@ class Soal extends Component {
     render() {
         return (
             <div>
-                {SoalData.map((data, key) => {
-                    return (
-                        <div className="pt-2" id={key} key={key}>
-                            <span>{key + 1}. </span><label className="form-label">{data.soal}</label>
-                            <div>
-                                {this.tempatJawaban(data, key)}
+                <div className="mx-auto py-5 px-5 py-3 border border-secondary bg-light shadow rounded">
+                    {SoalData.map((data, key) => {
+                        return (
+                            <div className="pt-2" id={key} key={key}>
+                                <span>{key + 1}. </span><label className="form-label">{data.soal}</label>
+                                <div>
+                                    {this.tempatJawaban(data, key)}
+                                </div>
+                                <hr />
                             </div>
-                            <hr />
-                        </div>
-                    )
-                })}
+                        )
+                    })}
+                </div>
 
-
-                <Hasil jawaban={this.state.jawabanSoal} jawabBenarSalah={this.state.koreksiJawaban} />
+                <div className="container my-5 py-5 px-5 py-3 border border-secondary bg-light shadow rounded">
+                    <Score dataKoreksi={this.state.koreksiJawaban} dataSoal ={SoalData} />
+                    <Hasil jawabBenarSalah={this.state.koreksiJawaban} />
+                </div>
 
             </div>
         );

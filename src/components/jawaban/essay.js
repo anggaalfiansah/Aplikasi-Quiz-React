@@ -12,11 +12,11 @@ class essay extends Component {
         // this.addJawaban(e.target.value);
     }
 
-    addJawaban = () => {
-        let jawab = this.state.jawaban;
+    addJawaban = (a) => {
+        let jawab1 = a;
         let nomor = this.props.nomor;
         let boolKoreksi = ""
-        if (jawab.length > this.props.jawab) {
+        if (jawab1 > this.props.jawab) {
             boolKoreksi = "Benar"
         } else {
             boolKoreksi = "Salah"
@@ -24,7 +24,7 @@ class essay extends Component {
 
         this.props.funcJawab({
             nomor: nomor,
-            jawaban: jawab
+            jawaban: jawab1
 
         })
 
@@ -38,7 +38,7 @@ class essay extends Component {
 
     jawaban = () => {
         let jawaban = this.state.jawaban;
-        if (jawaban.length > this.props.jawab) {
+        if (jawaban > this.props.jawab) {
             return <span id="cek-jawaban" className="text-success">Jawaban Benar</span>
         } else {
             return <span id="cek-jawaban" className="text-danger">Salah, Minimal {this.props.jawab} karakter</span>
@@ -46,9 +46,11 @@ class essay extends Component {
     }
 
     submitButton = () => {
-        const fn = this.inputText
-        this.setState({ jawaban: fn, disabled: true, hidden: true, jawabanVisibility: false })
-        this.addJawaban()
+        let fn = this.inputText
+        let fnLength = fn.length
+        this.setState({ jawaban: fnLength, disabled: true, hidden: true, jawabanVisibility: false })
+        console.log(this.state.jawaban)
+        {this.addJawaban(fnLength)}
     }
 
     render() {

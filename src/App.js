@@ -7,9 +7,7 @@ function App() {
     <div className="bg-secondary">
       <Navbar />
       <div className="container py-5">
-        <div className="mx-auto my-5 px-5 py-3 border border-secondary bg-light shadow rounded">
-          <Soal />
-        </div>
+        <Soal />
       </div>
     </div>
   );
