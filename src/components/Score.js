@@ -44,6 +44,8 @@ class Score extends Component {
             buttonVisibility: true
         })
 
+        document.getElementById("Soal").hidden = true
+
     }
     render() {
         return (
@@ -54,7 +56,7 @@ class Score extends Component {
                     </div>
                 </div>
                 <div hidden={this.state.hasilVisibility}>
-                    <h2 className="text-center mb-2 fs-1">Statistik Quiz</h2>
+                    <h2 className="text-center mb-3 fs-1">INI SCORE ANDA</h2>
                     <table className="table table-success table-bordered">
                         <thead>
                             <tr>
