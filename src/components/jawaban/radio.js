@@ -13,6 +13,7 @@ class radio extends Component {
 
     addJawaban = (jawab) => {
         let nomor = this.props.nomor;
+        let benar = this.props.jawab;
         let boolKoreksi = ""
         if (jawab === this.props.jawab) {
             boolKoreksi = "Benar"
@@ -22,13 +23,9 @@ class radio extends Component {
 
         this.props.funcJawab({
             nomor: nomor,
-            jawaban: jawab
-
-        })
-
-        this.props.funcKoreksi({
-            nomor: nomor,
-            jawabKoreksi: boolKoreksi
+            jawaban: jawab,
+            jawabKoreksi: boolKoreksi,
+            jawabBenar : benar
 
         })
 

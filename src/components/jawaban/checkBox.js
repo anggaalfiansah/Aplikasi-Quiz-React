@@ -37,6 +37,7 @@ class checkBox extends Component {
     addJawaban = () => {
         let jawab = this.state.jawaban.sort();
         let nomor = this.props.nomor;
+        let benar = this.props.jawab;
         let boolKoreksi = ""
         if (JSON.stringify(jawab) === JSON.stringify(this.props.jawab.sort())) {
             boolKoreksi = "Benar"
@@ -46,13 +47,9 @@ class checkBox extends Component {
 
         this.props.funcJawab({
             nomor: nomor,
-            jawaban: jawab
-
-        })
-
-        this.props.funcKoreksi({
-            nomor: nomor,
-            jawabKoreksi: boolKoreksi
+            jawaban: jawab.join(),
+            jawabKoreksi: boolKoreksi,
+            jawabBenar : benar.join()
 
         })
 

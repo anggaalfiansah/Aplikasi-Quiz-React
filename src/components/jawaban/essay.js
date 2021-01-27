@@ -1,3 +1,4 @@
+/* eslint-disable no-lone-blocks */
 import React, { Component } from 'react';
 
 class essay extends Component {
@@ -13,10 +14,11 @@ class essay extends Component {
     }
 
     addJawaban = (a) => {
-        let jawab1 = a;
+        let jawab = a;
         let nomor = this.props.nomor;
+        let benar = `Lebih ${this.props.jawab} Karakter`;
         let boolKoreksi = ""
-        if (jawab1 > this.props.jawab) {
+        if (jawab > this.props.jawab) {
             boolKoreksi = "Benar"
         } else {
             boolKoreksi = "Salah"
@@ -24,13 +26,9 @@ class essay extends Component {
 
         this.props.funcJawab({
             nomor: nomor,
-            jawaban: jawab1
-
-        })
-
-        this.props.funcKoreksi({
-            nomor: nomor,
-            jawabKoreksi: boolKoreksi
+            jawaban: jawab,
+            jawabKoreksi: boolKoreksi,
+            jawabBenar : benar
 
         })
 
