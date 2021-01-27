@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 // Untuk Mengambil data dari file SoalData.js
-import { SoalData } from "./SoalData";
+// import { SoalData } from "./SoalData";
 import Radio from "./jawaban/radio";
 import CheckBox from './jawaban/checkBox';
 import Essay from './jawaban/essay';
@@ -81,6 +81,7 @@ class Soal extends Component {
                 </div>
 
                 <div className="container my-5 py-5 px-5 py-3 border border-secondary bg-light shadow rounded">
+                    {/* Jangan Lupa this.state.soal juga diganti "SoalData" jika ingin pakai SoalData.js sebagai basis data*/}
                     <Score dataKoreksi={this.state.jawabanSoal} dataSoal={this.state.soal} />
                 </div>
 
