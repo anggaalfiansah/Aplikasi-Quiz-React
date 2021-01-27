@@ -49,11 +49,12 @@ class Score extends Component {
         return (
             <div>
                 <div className="row">
-                    <div className="col-md-2 mx-auto mb-3">
+                    <div className="col-md-2 mx-auto">
                         <button hidden={this.state.buttonVisibility} className="btn btn-primary" onClick={this.data}>Prosess Quiz</button>
                     </div>
                 </div>
                 <div hidden={this.state.hasilVisibility}>
+                    <h2 className="text-center mb-2 fs-1">Statistik Quiz</h2>
                     <table className="table table-success table-bordered">
                         <thead>
                             <tr>
